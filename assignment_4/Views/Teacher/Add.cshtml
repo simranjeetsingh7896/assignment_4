@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+<script>
+    function validateTeacher() {
+        var teacherfname = document.getElementById('TeacherFname').value;
+        var teacherlname = document.getElementById('TeacherLname').value;
+        var employeenumber = document.getElementById('Employeenumber').value;
+        var salary = document.getElementById('Salary').value;
+
+        if (teacherfname === "") {
+            alert('please fill first name');
+            return false;
+        }
+
+        if (teacherlname === "") {
+            alert('please fill last name');
+            return false;
+        }
+
+        if (employeenumber === "") {
+            alert('please fill employeenumber');
+            return false;
+        }
+
+        if (salary === "") {
+            alert('please fill salary');
+            return false;
+        }
+        return true;
+    }
+</script>
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/Teacher/List">Back To Teachers</a>
+    </nav>
+    <h2>New Teacher</h2>
+    <form method="POST" action="/Teacher/Create" onsubmit="validateTeacher()">
+        <div class="inputrow">
+            <label for="TeacherFname">First Name:</label>
+            <input type="text" id="TeacherFname" name="TeacherFname" />
+
+        </div>
+        <div class="inputrow">
+            <label for="TeacherLname">Last Name:</label>
+            <input type="text" id="TeacherLname" name="TeacherLname" />
+
+        </div>
+        <div class="inputrow">
+            <label for="Employeenumber">Employee number:</label>
+            <input type="text" id="Employeenumber" name="Employeenumber" />
+        </div>
+        <div class="inputrow">
+            <label for="Salary">Salary:</label>
+            <input type="text" id="Salary" name="Salary" />
+        </div>
+        <div class="inputrow">
+            <input type="submit" value="Create Teacher" />
+        </div>
+    </form>
+</div>
