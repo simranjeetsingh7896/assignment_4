@@ -106,6 +106,14 @@ namespace assignment_4.Controllers
             return View(SelectedTeacher);
         }
 
+        public ActionResult Ajax_Update(int id)
+        {
+            TeacherDataController controller = new TeacherDataController();
+            Teacher SelectedTeacher = controller.FindTeacher(id);
+
+            return View(SelectedTeacher);
+        }
+
 
         /// <summary>
         /// Receives a POST request containing information about an existing teacher in the system, with new values. Conveys this information to the API, and redirects to the "Teacher Show" page of our updated teacher.

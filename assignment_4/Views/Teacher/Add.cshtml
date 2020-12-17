@@ -3,41 +3,13 @@
     ViewBag.Title = "Add";
 }
 
-<script>
-    function validateTeacher() {
-        var teacherfname = document.getElementById('TeacherFname').value;
-        var teacherlname = document.getElementById('TeacherLname').value;
-        var employeenumber = document.getElementById('Employeenumber').value;
-        var salary = document.getElementById('Salary').value;
 
-        if (teacherfname === "") {
-            alert('please fill first name');
-            return false;
-        }
-
-        if (teacherlname === "") {
-            alert('please fill last name');
-            return false;
-        }
-
-        if (employeenumber === "") {
-            alert('please fill employeenumber');
-            return false;
-        }
-
-        if (salary === "") {
-            alert('please fill salary');
-            return false;
-        }
-        return true;
-    }
-</script>
 <div id="containershow">
     <nav>
         <a class="navlink" href="/Teacher/List">Back To Teachers</a>
     </nav>
     <h2>New Teacher</h2>
-    <form method="POST" action="/Teacher/Create" onsubmit="validateTeacher()">
+    <form method="POST" action="/Teacher/Create" onsubmit="return validateTeacher()">
         <div class="inputrow">
             <label for="TeacherFname">First Name:</label>
             <input type="text" id="TeacherFname" name="TeacherFname" />
@@ -59,5 +31,6 @@
         <div class="inputrow">
             <input type="submit" value="Create Teacher" />
         </div>
+        <div id="ErrorBox" style="display:none;"></div>
     </form>
 </div>

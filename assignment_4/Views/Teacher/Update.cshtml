@@ -8,7 +8,7 @@
         <a class="navlink" href="/Teacher/Show/@Model.TeacherId">Back</a>
     </nav>
     <h2>Update Teacher</h2>
-    <form method="POST" action="/Teacher/Update/@Model.TeacherId">
+    <form method="POST" action="/Teacher/Update/@Model.TeacherId" onsubmit="validateTeacher();">
         <div class="inputrow">
             <label for="TeacherFname">First Name:</label>
             <input type="text" id="TeacherFname" name="TeacherFname" value="@Model.TeacherFname" />
@@ -21,15 +21,16 @@
         </div>
         <div class="inputrow">
             <label for="Employeenumber">Employee number:</label>
-            <input type="text" id="Employeenumber" name="Employeenumber" value="@Model.Employeenumber"/>
+            <input type="text" id="Employeenumber" name="Employeenumber" value="@Model.Employeenumber" />
         </div>
         <div class="inputrow">
             <label for="Salary">Salary:</label>
-            <input type="text" id="Salary" name="Salary" value="@Model.Salary"/>
+            <input type="text" id="Salary" name="Salary" value="@Model.Salary" />
         </div>
         <div class="inputrow">
             <input type="submit" value="Update Teacher" />
         </div>
+        <div id="ErrorBox" style="display:none;"></div>
     </form>
 </div>
 
